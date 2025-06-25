@@ -6,22 +6,26 @@ permalink: /
 # accent: '#D21111'
 # accent: darkorange
 
-title: Your title goes here
+title: SELF-ORGANIZING VISUAL PROTOTYPES FOR NON-PARAMETRIC REPRESENTATION LEARNING
 authors:
-    - name: John Doe
+    - name: Thalles Santos Silva
       link: https://en.wikipedia.org/wiki/John_Doe
       affiliation: 1
-    - name: Jane Doe
+    - name: Helio Pedrini
       affiliation: 1
+    - name: Adín Ramírez Rivera
+      affiliation: 2
 affiliations:
+    - name: Universidade Estadual de Campinas
+      link: https://unicamp.br/
     - name: University of Oslo
       link: https://uio.no
-paper: https://arxiv.org
-video: https://www.youtube.com/@UniOslo
-code: https://github.com/dsb-ifi
+paper: https://arxiv.org/abs/2505.21533
+video: https://www.youtube.com/watch?v=E2wtWB5kZgU
+code: https://github.com/sthalles/sop
 # data: https://huggingface.co/docs/
 
-abstract: The "computable" numbers may be described briefly as the real numbers whose expressions as a decimal are calculable by finite means. Although the subject of this paper is ostensibly the computable numbers. it is almost equally easy to define and investigate computable functions of an integral variable or a real or computable variable, computable predicates, and so forth. The fundamental problems involved are, however, the same in each case, and I have chosen the computable numbers for explicit treatment as involving the least cumbrous technique. I hope shortly to give an account of the relations of the computable numbers, functions, and so forth to one another. This will include a development of the theory of functions of a real variable expressed in terms of computable numbers. According to my definition, a number is computable if its decimal can be written down by a machine... 
+abstract: We present Self-Organizing Visual Prototypes (SOP), a new training technique for unsupervised visual feature learning. Unlike existing prototypical self-supervised learning (SSL) methods that rely on a single prototype to encode all relevant features of a hidden cluster in the data, we propose the SOP strategy. In this strategy, a prototype is represented by many semantically similar representations, or support embeddings (SEs), each containing a complementary set of features that together better characterize their region in space and maximize training performance. We reaffirm the feasibility of non-parametric SSL by introducing novel non-parametric adaptations of two loss functions that implement the SOP strategy. Notably, we introduce the SOP Masked Image Modeling (SOP-MIM) task, where masked representations are reconstructed from the perspective of multiple non-parametric local SEs. We comprehensively evaluate the representations learned using the SOP strategy on a range of benchmarks, including retrieval, linear evaluation, fine-tuning, and object detection. Our pre-trained encoders achieve state-of-the-art performance on many retrieval benchmarks and demonstrate increasing performance gains with more complex encoders. 
 
 carousels:
   - images: 
