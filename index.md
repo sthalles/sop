@@ -29,7 +29,7 @@ abstract: We present Self-Organizing Visual Prototypes (SOP), a new training tec
 
 carousels:
   - images: 
-    - image: assets/sop_architecture.pdf
+    - image: sop_architecture.pdf
     # - image: Floris_Carousel.jpg
     # - image: Carrousel-LouisXIV-1662.jpg
     # - image: Turing_machine.png
@@ -67,7 +67,7 @@ Self-supervised learning (SSL) has become a cornerstone for learning visual repr
     </ul>
   </div>
   <div style="flex: 1;">
-    <img src="assets/sop_architecture.pdf" alt="SOP Architecture" style="width: 100%; border: 1px solid #ccc; border-radius: 8px;">
+    <img src="sop_architecture.pdf" alt="SOP Architecture" style="width: 100%; border: 1px solid #ccc; border-radius: 8px;">
   </div>
 </div>
 
