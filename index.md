@@ -42,12 +42,12 @@ abstract: We present Self-Organizing Visual Prototypes (SOP), a new training tec
 <!-- {% include carousel.html height="50" unit="%" number="1" %} -->
 
 
-<div align="center" style="margin-bottom:2em;"> <!-- Replace the src with your actual high-res video link or embed code --> 
-<!-- <video width="800" controls poster="video_thumbnail.png">  -->
-<source src="sop_paper_video.mp4" type="video/mp4"> Your browser does not support the video tag. 
-</video> <br> 
-<em>Watch: Self-Organizing Visual Prototypes (SOP) – Paper Overview</em> 
-</div> 
+<div align="center" style="margin-bottom:2em;">
+  <img src="sop_paper_overview.gif" alt="SOP Paper Overview Animation" width="800"/>
+  <br>
+  <em>Watch: Self-Organizing Visual Prototypes (SOP) – Paper Overview (GIF)</em>
+</div>
+
 ---
 
 ## Overview
