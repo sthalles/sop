@@ -42,7 +42,6 @@ abstract: We present Self-Organizing Visual Prototypes (SOP), a new training tec
 <!-- {% include carousel.html height="50" unit="%" number="1" %} -->
 
 
---- 
 <div align="center" style="margin-bottom:2em;"> <!-- Replace the src with your actual high-res video link or embed code --> 
 <!-- <video width="800" controls poster="video_thumbnail.png">  -->
 <source src="sop_paper_video.mp4" type="video/mp4"> Your browser does not support the video tag. 
@@ -66,7 +65,7 @@ Self-supervised learning (SSL) has become a cornerstone for learning visual repr
 ## Key Ideas
 
 <div style="text-align: center;">
-  <img src="sop_architecture.png" alt="SOP Architecture" style="width: 70%; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 1em;">
+  <img src="sop_architecture.png" alt="SOP Architecture">
 </div>
 
 - **Non-parametric Prototypes:** 
@@ -137,7 +136,7 @@ Self-supervised learning (SSL) has become a cornerstone for learning visual repr
 ## Results
 
 <div style="text-align: center;">
-  <img src="linear_results.png" alt="Linear Results" style="width: 70%; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 1em;">
+  <img src="linear_results.png" alt="Linear Results" style="width: 60%; margin-bottom: 1em;">
 </div>
 
 ---
