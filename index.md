@@ -42,6 +42,15 @@ abstract: We present Self-Organizing Visual Prototypes (SOP), a new training tec
 <!-- {% include carousel.html height="50" unit="%" number="1" %} -->
 
 
+--- 
+<div align="center" style="margin-bottom:2em;"> <!-- Replace the src with your actual high-res video link or embed code --> 
+<!-- <video width="800" controls poster="video_thumbnail.png">  -->
+<source src="sop_paper_video.mp4" type="video/mp4"> Your browser does not support the video tag. 
+</video> <br> 
+<em>Watch: Self-Organizing Visual Prototypes (SOP) – Paper Overview</em> 
+</div> 
+---
+
 ## Overview
 
 Self-supervised learning (SSL) has become a cornerstone for learning visual representations without labels. Most state-of-the-art SSL methods for computer vision rely on *prototypes*—learnable vectors that are supposed to represent hidden clusters in the data. However, these approaches have important limitations:
@@ -57,7 +66,7 @@ Self-supervised learning (SSL) has become a cornerstone for learning visual repr
 ## Key Ideas
 
 <div style="text-align: center;">
-  <img src="sop_architecture.pdf" alt="SOP Architecture" style="width: 70%; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 1em;">
+  <img src="sop_architecture.png" alt="SOP Architecture" style="width: 70%; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 1em;">
 </div>
 
 - **Non-parametric Prototypes:** 
@@ -77,30 +86,35 @@ Self-supervised learning (SSL) has become a cornerstone for learning visual repr
 
 ---
 
-
 ## How SOP Works
 
-1. **Sample Anchors:**
-   Randomly select $K$ anchor embeddings from a memory bank of previous features.
+1. **Anchor Sampling:**
+   At each training step, SOP randomly selects $K$ anchor embeddings from a memory bank containing features from previously seen images.
 
-2. **Grow Supports:**
-   For each anchor, find its $k$ nearest neighbors in the memory. The anchor and its supports together form a Self-Organizing Prototype (SOP).
+2. **Support Construction:**
+   For each anchor, SOP finds its $k$ nearest neighbors in the memory bank. The anchor and its supports together define a Self-Organizing Prototype (SOP), representing a local region in the feature space.
 
-3. **Vote & Learn:**
-   Each support embedding votes (weighted by similarity) for how well a new view matches its SOP. These votes are merged to produce a final similarity score.
+3. **Voting and Aggregation:**
+   Each support embedding casts a vote (weighted by its similarity to the anchor) regarding how well a new view matches the SOP. These votes are aggregated to form a soft assignment of the view to each SOP.
 
-4. **Loss Functions:**
-   - **Global ([CLS]) Loss:** Encourages consistency between different views of the same image at the region (SOP) level.
-   - **SOP-MIM (Masked Image Modeling) Loss:** Encourages reconstruction of masked patches from the perspective of multiple local supports.
+4. **Similarity Computation:**
+   For a view $u$, the probability of assignment to each SOP is computed as:
+   $$
+   P(u) = \mathrm{softmax}(u D^\top) Y
+   $$
+   where $D$ is the matrix of all SOP support embeddings and $Y$ contains the soft contribution weights of each support.
 
-5. **No Learnable Prototypes:**
-   SOPs are always constructed from data, not learned parameters, and are rebuilt every step.
+5. **Loss Functions:**
+   - **Global ([CLS]) Loss:**
+     Encourages consistency between the SOP assignments of different augmented views of the same image:
+     $$
+     L_{\text{CLS}} = -\sum_x P(z^1_0)^\top \log P(z^2_0)
+     $$
+   - **SOP-MIM (Masked Image Modeling) Loss:**
+     Trains the model to reconstruct masked patches using local SOPs, further enriching the learned representations.
 
-```latex
-\[
-P(u) = \mathrm{softmax}(u D^\top) Y
-\]
-```
+6. **No Learnable Prototypes:**
+   SOPs are always constructed from real data embeddings and are dynamically rebuilt every iteration, ensuring adaptability and preventing prototype drift or collapse.
 
 ---
 
@@ -122,16 +136,9 @@ P(u) = \mathrm{softmax}(u D^\top) Y
 
 ## Results
 
-| Method | Architecture | k-NN | Linear | 1% Labels | 10% Labels | 100% Labels |
-|--------|--------------|------|--------|-----------|------------|-------------|
-| iBOT   | ViT-B/16     | 77.1 | 79.5   | 68.5      | 78.1       | 84.0        |
-| MaSSL  | ViT-B/16     | 77.2 | 79.6   |           |            |             |
-| **SOP**| ViT-B/16     | **78.2** | **79.9** | **69.5** | **78.4** | **84.2**   |
-
-- **Image retrieval:** SOP outperforms previous methods by up to +3.2 mAP on hard splits.
-- **Robustness:** SOP is more robust to background changes and imbalanced data.
-
----
+<div style="text-align: center;">
+  <img src="linear_results.png" alt="Linear Results" style="width: 70%; border: 1px solid #ccc; border-radius: 8px; margin-bottom: 1em;">
+</div>
 
 ---
 
@@ -152,14 +159,13 @@ A: Yes. SOPs scale well with model size and do not require a large number of pro
 ## Citation
 {% raw %}
 ```
-@article{turing1936computable,
-  title={On computable numbers, with an application to the Entscheidungsproblem},
-  author={Turing, Alan Mathison},
-  journal={Journal of Mathematics},
-  volume={58},
-  number={345-363},
-  pages={5},
-  year={1936}
+@inproceedings{
+silva2025selforganizing,
+title={Self-Organizing Visual Prototypes for Non-Parametric Representation Learning},
+author={Thalles Silva and Helio Pedrini and Ad{\'\i}n Ram{\'\i}rez Rivera},
+booktitle={Forty-second International Conference on Machine Learning},
+year={2025},
+url={https://openreview.net/forum?id=NGC7wdMFao}
 }
 ```
 {% endraw %}
