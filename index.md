@@ -13,8 +13,10 @@ authors:
       affiliation: 1
     - name: Helio Pedrini
       affiliation: 1
+      link: https://www.ic.unicamp.br/~helio/
     - name: Adín Ramírez Rivera
       affiliation: 2
+      link: https://www.mn.uio.no/ifi/english/people/aca/adinr/
 affiliations:
     - name: Universidade Estadual de Campinas
       link: https://unicamp.br/
