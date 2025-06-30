@@ -27,16 +27,17 @@ video: https://www.youtube.com/watch?v=E2wtWB5kZgU
 code: https://github.com/sthalles/sop
 # data: https://huggingface.co/docs/
 
-<div align="center" style="margin-bottom:2em;">
-  <img src="sop_paper_overview.gif" alt="SOP Paper Overview Animation" width="1240"/>
-  <br>
-  <em>Watch: Self-Organizing Visual Prototypes (SOP) – Paper Overview (GIF)</em>
-</div>
-
 abstract: We present Self-Organizing Visual Prototypes (SOP), a new training technique for unsupervised visual feature learning. Unlike existing prototypical self-supervised learning (SSL) methods that rely on a single prototype to encode all relevant features of a hidden cluster in the data, we propose the SOP strategy. In this strategy, a prototype is represented by many semantically similar representations, or support embeddings (SEs), each containing a complementary set of features that together better characterize their region in space and maximize training performance. We reaffirm the feasibility of non-parametric SSL by introducing novel non-parametric adaptations of two loss functions that implement the SOP strategy. Notably, we introduce the SOP Masked Image Modeling (SOP-MIM) task, where masked representations are reconstructed from the perspective of multiple non-parametric local SEs. We comprehensively evaluate the representations learned using the SOP strategy on a range of benchmarks, including retrieval, linear evaluation, fine-tuning, and object detection. Our pre-trained encoders achieve state-of-the-art performance on many retrieval benchmarks and demonstrate increasing performance gains with more complex encoders. 
 
 ---
 
+<div align="center" style="margin-bottom:2em;">
+  <img src="sop_paper_overview.gif" alt="SOP Paper Overview Animation" width="800"/>
+  <br>
+  <em>Watch: Self-Organizing Visual Prototypes (SOP) – Paper Overview (GIF)</em>
+</div>
+
+---
 
 ## Overview
 
