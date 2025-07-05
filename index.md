@@ -152,7 +152,7 @@ A: Yes. SOPs scale well with model size and do not require a large number of pro
 @inproceedings{
 silva2025selforganizing,
 title={Self-Organizing Visual Prototypes for Non-Parametric Representation Learning},
-author={Silva, Thalles and Pedrini, Helio and Ram{\'\i}rez Rivera, Ad{\'\i}n},
+author={Thalles Silva and Helio Pedrini and Ad{\'\i}n Ram{\'\i}rez Rivera},
 booktitle={Forty-second International Conference on Machine Learning},
 year={2025},
 url={https://openreview.net/forum?id=NGC7wdMFao}
